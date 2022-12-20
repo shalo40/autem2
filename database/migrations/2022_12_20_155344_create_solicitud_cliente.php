@@ -17,11 +17,12 @@ class CreateSolicitudCliente extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->Integer('numero_solicitud')->nullable();
+            $table->String('tipo_solicitud')->nullable();
 
              //CLIENTE
              $table->Integer('id_empresa')->nullable();
              $table->Integer('id_cliente')->nullable();
-             
+
             $table->String('Estado_Solicitud')->nullable();
             
 
