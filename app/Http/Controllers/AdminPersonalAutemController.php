@@ -5,7 +5,7 @@
 	use DB;
 	use CRUDBooster;
 
-	class AdminInventarioController extends \crocodicstudio\crudbooster\controllers\CBController {
+	class AdminPersonalAutemController extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
@@ -25,38 +25,44 @@
 			$this->button_filter = true;
 			$this->button_import = true;
 			$this->button_export = true;
-			$this->table = "inventario";
+			$this->table = "personal_autem";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Codigo","name"=>"Codigo_Objeto_Inventario"];
-			$this->col[] = ["label"=>"Tipo objeto","name"=>"Tipo_Objeto_Inventario"];
-			$this->col[] = ["label"=>"Nombre","name"=>"Nombre_Objeto_Inventario"];
-			$this->col[] = ["label"=>"Numero de serie","name"=>"NSerie_Objeto_Inventario"];
-			$this->col[] = ["label"=>"Cantidad","name"=>"Cantidad_Objeto_Inventario"];
-			$this->col[] = ["label"=>"Valor (aproximado)","name"=>"Valor_Objeto_Inventario"];
-			$this->col[] = ["label"=>"Fecha de inventario","name"=>"created_at"];
+			$this->col[] = ["label"=>"Tipo de personal","name"=>"Tipo_Personal"];
+			$this->col[] = ["label"=>"Tipo Contrato","name"=>"Tipo_Contrato_Personal"];
+			$this->col[] = ["label"=>"Cargo","name"=>"Cargo_Personal"];
+			$this->col[] = ["label"=>"Rut","name"=>"Rut_Personal"];
+			$this->col[] = ["label"=>"Nombre","name"=>"Nombre_Personal"];
+			$this->col[] = ["label"=>"Direccion","name"=>"Direccion_Personal"];
+			$this->col[] = ["label"=>"Telefono","name"=>"Telefono_Personal"];
+			$this->col[] = ["label"=>"Correo","name"=>"Correo_Personal"];
+			$this->col[] = ["label"=>"Fecha de creacion","name"=>"created_at"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Codigo','name'=>'Codigo_Objeto_Inventario','type'=>'text','width'=>'col-sm-4'];
-			$this->form[] = ['label'=>'Tipo objeto','name'=>'Tipo_Objeto_Inventario','type'=>'text','width'=>'col-sm-6'];
-			$this->form[] = ['label'=>'Nombre','name'=>'Nombre_Objeto_Inventario','type'=>'text','width'=>'col-sm-6'];
-			$this->form[] = ['label'=>'Numero de serie','name'=>'NSerie_Objeto_Inventario','type'=>'text','width'=>'col-sm-4'];
-			$this->form[] = ['label'=>'Cantidad','name'=>'Cantidad_Objeto_Inventario','type'=>'number','width'=>'col-sm-2'];
-			$this->form[] = ['label'=>'Valor Objeto Inventario','name'=>'Valor_Objeto_Inventario','type'=>'money','width'=>'col-sm-4'];
+			$this->form[] = ['label'=>'Tipo','name'=>'Tipo_Personal','type'=>'text','width'=>'col-sm-6'];
+			$this->form[] = ['label'=>'Tipo de contrato','name'=>'Tipo_Contrato_Personal','type'=>'text','width'=>'col-sm-6'];
+			$this->form[] = ['label'=>'Cargo','name'=>'Cargo_Personal','type'=>'text','width'=>'col-sm-4'];
+			$this->form[] = ['label'=>'Rut','name'=>'Rut_Personal','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-6'];
+			$this->form[] = ['label'=>'Nombre','name'=>'Nombre_Personal','type'=>'text','width'=>'col-sm-6'];
+			$this->form[] = ['label'=>'Direccion','name'=>'Direccion_Personal','type'=>'text','width'=>'col-sm-6'];
+			$this->form[] = ['label'=>'Telefono','name'=>'Telefono_Personal','type'=>'number','width'=>'col-sm-4'];
+			$this->form[] = ['label'=>'Correo electrónico','name'=>'Correo_Personal','type'=>'email','validation'=>'required|min:1|max:255','width'=>'col-sm-6'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ['label'=>'Codigo','name'=>'Codigo_Objeto_Inventario','type'=>'text','width'=>'col-sm-4'];
-			//$this->form[] = ['label'=>'Tipo objeto','name'=>'Tipo_Objeto_Inventario','type'=>'text','width'=>'col-sm-6'];
-			//$this->form[] = ['label'=>'Nombre','name'=>'Nombre_Objeto_Inventario','type'=>'text','width'=>'col-sm-6'];
-			//$this->form[] = ['label'=>'Numero de serie','name'=>'NSerie_Objeto_Inventario','type'=>'text','width'=>'col-sm-4'];
-			//$this->form[] = ['label'=>'Cantidad','name'=>'Cantidad_Objeto_Inventario','type'=>'number','width'=>'col-sm-2'];
-			//$this->form[] = ['label'=>'Valor Objeto Inventario','name'=>'Valor_Objeto_Inventario','type'=>'money','width'=>'col-sm-4'];
+			//$this->form[] = ["label"=>"Tipo Personal","name"=>"Tipo_Personal","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Tipo Contrato Personal","name"=>"Tipo_Contrato_Personal","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Cargo Personal","name"=>"Cargo_Personal","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Rut Personal","name"=>"Rut_Personal","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Nombre Personal","name"=>"Nombre_Personal","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Direccion Personal","name"=>"Direccion_Personal","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Telefono Personal","name"=>"Telefono_Personal","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Correo Personal","name"=>"Correo_Personal","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
 			# OLD END FORM
 
 			/* 

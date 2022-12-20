@@ -5,7 +5,7 @@
 	use DB;
 	use CRUDBooster;
 
-	class AdminInventarioController extends \crocodicstudio\crudbooster\controllers\CBController {
+	class AdminProcedimientosInternosController extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
@@ -25,38 +25,39 @@
 			$this->button_filter = true;
 			$this->button_import = true;
 			$this->button_export = true;
-			$this->table = "inventario";
+			$this->table = "procedimientos_internos";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Codigo","name"=>"Codigo_Objeto_Inventario"];
-			$this->col[] = ["label"=>"Tipo objeto","name"=>"Tipo_Objeto_Inventario"];
-			$this->col[] = ["label"=>"Nombre","name"=>"Nombre_Objeto_Inventario"];
-			$this->col[] = ["label"=>"Numero de serie","name"=>"NSerie_Objeto_Inventario"];
-			$this->col[] = ["label"=>"Cantidad","name"=>"Cantidad_Objeto_Inventario"];
-			$this->col[] = ["label"=>"Valor (aproximado)","name"=>"Valor_Objeto_Inventario"];
-			$this->col[] = ["label"=>"Fecha de inventario","name"=>"created_at"];
+			$this->col[] = ["label"=>"Tipo de procedimiento","name"=>"Tipo_Proced"];
+			$this->col[] = ["label"=>"Codigo","name"=>"Cod_Proced"];
+			$this->col[] = ["label"=>"Nombre","name"=>"Nombre_Proced"];
+			$this->col[] = ["label"=>"Descipcion","name"=>"Descipcion_Proced"];
+			$this->col[] = ["label"=>"Valor","name"=>"Valor_Proced"];
+			$this->col[] = ["label"=>"Fecha de creacion","name"=>"created_at"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Codigo','name'=>'Codigo_Objeto_Inventario','type'=>'text','width'=>'col-sm-4'];
-			$this->form[] = ['label'=>'Tipo objeto','name'=>'Tipo_Objeto_Inventario','type'=>'text','width'=>'col-sm-6'];
-			$this->form[] = ['label'=>'Nombre','name'=>'Nombre_Objeto_Inventario','type'=>'text','width'=>'col-sm-6'];
-			$this->form[] = ['label'=>'Numero de serie','name'=>'NSerie_Objeto_Inventario','type'=>'text','width'=>'col-sm-4'];
-			$this->form[] = ['label'=>'Cantidad','name'=>'Cantidad_Objeto_Inventario','type'=>'number','width'=>'col-sm-2'];
-			$this->form[] = ['label'=>'Valor Objeto Inventario','name'=>'Valor_Objeto_Inventario','type'=>'money','width'=>'col-sm-4'];
+			$this->form[] = ['label'=>'Tipo de procedimiento','name'=>'Tipo_Proced','type'=>'text','width'=>'col-sm-6'];
+			$this->form[] = ['label'=>'Codigo','name'=>'Cod_Proced','type'=>'text','width'=>'col-sm-4'];
+			$this->form[] = ['label'=>'Nombre','name'=>'Nombre_Proced','type'=>'text','width'=>'col-sm-4'];
+			$this->form[] = ['label'=>'Descipcion','name'=>'Descipcion_Proced','type'=>'textarea','width'=>'col-sm-6'];
+			$this->form[] = ['label'=>'Tiempo requerido (hrs)','name'=>'Tiempo_Proced','type'=>'text','width'=>'col-sm-2'];
+			$this->form[] = ['label'=>'Recursos necesarios','name'=>'Recursos_Proced','type'=>'text','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Valor','name'=>'Valor_Proced','type'=>'money','width'=>'col-sm-3'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ['label'=>'Codigo','name'=>'Codigo_Objeto_Inventario','type'=>'text','width'=>'col-sm-4'];
-			//$this->form[] = ['label'=>'Tipo objeto','name'=>'Tipo_Objeto_Inventario','type'=>'text','width'=>'col-sm-6'];
-			//$this->form[] = ['label'=>'Nombre','name'=>'Nombre_Objeto_Inventario','type'=>'text','width'=>'col-sm-6'];
-			//$this->form[] = ['label'=>'Numero de serie','name'=>'NSerie_Objeto_Inventario','type'=>'text','width'=>'col-sm-4'];
-			//$this->form[] = ['label'=>'Cantidad','name'=>'Cantidad_Objeto_Inventario','type'=>'number','width'=>'col-sm-2'];
-			//$this->form[] = ['label'=>'Valor Objeto Inventario','name'=>'Valor_Objeto_Inventario','type'=>'money','width'=>'col-sm-4'];
+			//$this->form[] = ["label"=>"Tipo Proced","name"=>"Tipo_Proced","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Cod Proced","name"=>"Cod_Proced","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Nombre Proced","name"=>"Nombre_Proced","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Descipcion Proced","name"=>"Descipcion_Proced","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Valor Proced","name"=>"Valor_Proced","type"=>"money","required"=>TRUE,"validation"=>"required|integer|min:0"];
+			//$this->form[] = ["label"=>"Tiempo Proced","name"=>"Tiempo_Proced","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Recursos Proced","name"=>"Recursos_Proced","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
 			# OLD END FORM
 
 			/* 
