@@ -21,7 +21,7 @@ class CreateInventario extends Migration
             $table->String('Nombre_Objeto_Inventario')->nullable();
             $table->String('NSerie_Objeto_Inventario')->nullable();
             $table->String('Cantidad_Objeto_Inventario')->nullable();
-            $table->String('Valor_Objeto_Inventario')->nullable();
+            $table->double('Valor_Objeto_Inventario')->nullable();
         });
     }
 
