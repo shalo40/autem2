@@ -42,6 +42,12 @@
 			$this->form[] = ['label'=>'Numero Solicitud','name'=>'numero_solicitud','type'=>'number','validation'=>'required','width'=>'col-sm-4'];
 			$this->form[] = ['label'=>'Empresa','name'=>'id_empresa','type'=>'select2','width'=>'col-sm-6','datatable'=>'clientes,Nombre_Empresa'];
 			$this->form[] = ['label'=>'Cliente','name'=>'id_cliente','type'=>'select2','width'=>'col-sm-6','datatable'=>'clientes,Nombre_Cliente'];
+
+			$columns = [];
+			
+
+			
+
 			$this->form[] = ['label'=>'Estado Solicitud','name'=>'Estado_Solicitud','type'=>'select','width'=>'col-sm-6','dataenum'=>'Pendiente;En espera de Cotizacion;Buscando transportista;Cancelado;Completado;En curso'];
 			# END FORM DO NOT REMOVE THIS LINE
 
